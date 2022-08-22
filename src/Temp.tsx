@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react';
 import './Temp.css';
 import Particles from 'react-tsparticles';
