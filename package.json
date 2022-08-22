@@ -10,7 +10,11 @@
   },
   "dependencies": {
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "react-tsparticles": "^2.2.3",
+    "tsparticles": "^2.2.3",
+    "tsparticles-engine": "^2.2.3",
+    "tsparticles-preset-fire": "^2.2.3"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",
