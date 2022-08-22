@@ -5,6 +5,7 @@ import { Contact } from './Contact';
 import { Experience } from './Experience';
 import { Archive } from './Archive';
 import { Projects } from './Projects';
+import { ScrollTest } from './ScrollTest';
 
 function App() {
 	const [count, setCount] = useState(0);
@@ -51,6 +52,7 @@ function App() {
 			<section className="app-section" id="experience">
 				<Experience />
 			</section>
+			<ScrollTest />
 			<section className="app-section" id="archive">
 				<Archive />
 			</section>
