@@ -28,7 +28,7 @@ export function Temp() {
 				<p className="info">Check back here in a few days...</p>
 				<p className="info">- Tim 👨🏻‍💻</p>
 			</div>
-			<Particles options={options} init={particlesInit} />;
+			<Particles options={options} init={particlesInit} />
 		</React.Fragment>
 	);
 }
