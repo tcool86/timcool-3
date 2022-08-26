@@ -6,7 +6,7 @@ const Path = (props: any) => {
 };
 
 export const MenuToggle = ({ toggle }: { toggle: React.MouseEventHandler }) => (
-	<button onClick={toggle}>
+	<button className="mobile-menu-btn" onClick={toggle}>
 		<svg width="24" height="24" viewBox="-1 -2 24 24">
 			<Path
 				variants={{

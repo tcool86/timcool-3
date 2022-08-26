@@ -15,13 +15,13 @@ function Header() {
 							</a>
 						</li>
 						<li>
-							<a className="app-link" href="#projects">
-								Projects
+							<a className="app-link" href="#experience">
+								Experience
 							</a>
 						</li>
 						<li>
-							<a className="app-link" href="#experience">
-								Experience
+							<a className="app-link" href="#projects">
+								Projects
 							</a>
 						</li>
 						<li>

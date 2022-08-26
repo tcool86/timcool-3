@@ -4,10 +4,12 @@
 
 #root {
 	--bg-color: #0f0c24;
+	--bg-color-transparent: #0f0c2494;
 	--primary-color: #a35050;
 	--secondary-color: #745af9;
 	--highlight-color: #bff7f7;
 	--shadow-color: #170b0b;
+	--soft-shadow-color: #745af97f;
 }
 
 .app-section {

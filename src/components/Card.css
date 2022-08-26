@@ -1,0 +1,22 @@
+.app-card {
+	margin: calc(5em + 1vw);
+	padding: 0 2em;
+	border: 1px solid var(--soft-shadow-color);
+	border-bottom: transparent;
+	border-top: transparent;
+	border-right: transparent;
+	color: var(--highlight-color);
+	text-shadow: 1px 1px 1px var(--soft-shadow-color);
+}
+
+.app-card p {
+	text-indent: 1em;
+	text-align: left;
+}
+
+@media (max-width: 600px) {
+	.app-card {
+		margin: 2.5em;
+		padding: 0 1em;
+	}
+}

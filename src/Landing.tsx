@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { motion, useTime, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 function Landing() {
 	const name = 'Tim Cool'.split('');
@@ -12,14 +12,16 @@ function Landing() {
 			<motion.span
 				key={index + '-' + letter}
 				initial={{
-					x: -400,
+					x: -200,
+					y: -100,
 					opacity: 0,
 				}}
 				animate={{
 					x: 0,
+					y: 0,
 					opacity: 1,
 				}}
-				transition={{ delay: 0.5 + index * 0.02 }}
+				transition={{ delay: 0.8 + index * 0.1 }}
 			>
 				{letter}
 			</motion.span>

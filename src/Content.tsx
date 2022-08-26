@@ -1,29 +1,48 @@
-import { Fragment } from 'react';
-import { About } from './Pages/About';
-import { Contact } from './Pages/Contact';
-import { Experience } from './Pages/Experience';
-import { Archive } from './Pages/Archive/Archive';
-import { Projects } from './Pages/Projects';
+import { Fragment, PropsWithChildren, useRef } from 'react';
+import { About } from './pages/About';
+import { Contact } from './pages/Contact';
+import { Experience } from './pages/experience/Experience';
+import { Archive } from './pages/archive/Archive';
+import { Projects } from './pages/Projects';
+import { motion, useInView } from 'framer-motion';
+
+function ContentSection({ children, id }: PropsWithChildren & { id: string }) {
+	const ref = useRef(null);
+	const isInView = useInView(ref, { once: true });
+	return (
+		<section className="app-section" id={id} ref={ref}>
+			<motion.div
+				style={{
+					transform: isInView ? 'none' : 'translateY(96px)',
+					opacity: isInView ? 1 : 0,
+					transition:
+						'all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s',
+				}}
+			>
+				{children}
+			</motion.div>
+		</section>
+	);
+}
 
 function Content() {
 	return (
 		<Fragment>
-			<section className="app-section" id="about">
+			<ContentSection id="about">
 				<About />
-			</section>
-			<section className="app-section" id="projects">
-				<Projects />
-			</section>
-			<section className="app-section" id="experience">
+			</ContentSection>
+			<ContentSection id="experience">
 				<Experience />
-			</section>
-			{/* <ScrollTest /> */}
-			<section className="app-section" id="archive">
+			</ContentSection>
+			<ContentSection id="projects">
+				<Projects />
+			</ContentSection>
+			<ContentSection id="archive">
 				<Archive />
-			</section>
-			<section className="app-section" id="contact">
+			</ContentSection>
+			<ContentSection id="contact">
 				<Contact />
-			</section>
+			</ContentSection>
 		</Fragment>
 	);
 }

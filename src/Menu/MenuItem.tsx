@@ -17,15 +17,26 @@ const variants = {
 	},
 };
 
-export const MenuItem = ({ text, index }: { text: string; index: number }) => {
+export const MenuItem = ({
+	text,
+	link,
+	index,
+}: {
+	text: string;
+	link: string;
+	index: number;
+}) => {
 	return (
 		<motion.li
 			variants={variants}
-			whileHover={{ scale: 1.1 }}
-			whileTap={{ scale: 0.95 }}
+			key={`li-${text.toLowerCase()}-${index}`}
+			whileTap={{ x: 10, color: 'var(--primary-color)' }}
+			onClick={() => (location.href = link)}
 		>
 			<div className="bullet" />
-			<span className="app-link">{text}</span>
+			<a className="app-link" href={link}>
+				{text}
+			</a>
 		</motion.li>
 	);
 };
