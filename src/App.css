@@ -13,8 +13,10 @@
 }
 
 .app-section {
-	min-height: 100vh;
-	padding-top: 100px;
+	display: flex;
+	justify-content: center;
+	min-height: 54vh;
+	padding-top: 120px;
 	background-color: var(--bg-color);
 	color: var(--primary-color);
 }

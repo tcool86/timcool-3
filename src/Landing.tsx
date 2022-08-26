@@ -1,4 +1,3 @@
-import { Fragment } from 'react';
 import { motion } from 'framer-motion';
 
 function Landing() {
@@ -29,12 +28,12 @@ function Landing() {
 	};
 
 	return (
-		<Fragment>
-			<section className="app-section">
+		<section className="app-section landing-section">
+			<motion.div>
 				<h1 className="title">{name.map(Text)}</h1>
 				<h1 className="title subtitle">{subtitle.map(Text)}</h1>
-			</section>
-		</Fragment>
+			</motion.div>
+		</section>
 	);
 }
 

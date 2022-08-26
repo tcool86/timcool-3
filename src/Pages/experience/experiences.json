@@ -29,7 +29,7 @@
     "title": "Software Engineer (Technical Lead)",
     "company": "thismoment.com",
     "banner": {
-      "shadow": "#8e919a",
+      "shadow": "#000",
       "primaryColor": "#67c244",
       "secondaryColor": "#fff"
     },
