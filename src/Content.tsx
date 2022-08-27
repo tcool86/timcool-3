@@ -1,5 +1,5 @@
 import { Fragment, PropsWithChildren, useRef } from 'react';
-import About from './pages/About.tsx';
+import About from '@/pages/About.tsx';
 import Contact from './pages/contact/Contact.tsx';
 import Experience from './pages/experience/Experience.tsx';
 import Archive from './pages/archive/Archive.tsx';
