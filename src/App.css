@@ -16,7 +16,7 @@
 .app-section {
 	display: flex;
 	justify-content: center;
-	min-height: 54vh;
+	min-height: 66vh;
 	padding-top: 120px;
 	background-color: var(--bg-color);
 	color: var(--primary-color);
@@ -37,4 +37,31 @@ html::-webkit-scrollbar-thumb {
 	background-color: var(--soft-shadow-color); /* color of the scroll thumb */
 	border-radius: 20px; /* roundness of the scroll thumb */
 	border: 1px solid var(--primary-color); /* creates padding around scroll thumb */
+}
+
+.landing-arrow {
+	position: absolute;
+	bottom: calc(20vh + 64px);
+	transform-origin: 0 0;
+	width: 64px;
+	margin: auto;
+}
+
+.landing-arrow path {
+	stroke-width: 2px;
+}
+
+.landing-arrow path:nth-child(n + 2) {
+	position: relative;
+	translate: 0 2px;
+}
+
+.landing-wrapper {
+	margin-top: 20vh;
+	position: relative;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
 }

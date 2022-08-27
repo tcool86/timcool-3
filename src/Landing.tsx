@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import Arrow from './Arrow';
 
 function Landing() {
 	const name = 'Tim Cool'.split('');
@@ -32,12 +33,15 @@ function Landing() {
 	};
 
 	return (
-		<section className="app-section landing-section">
-			<motion.div>
-				<h1 className="title">{name.map(Text)}</h1>
-				<h1 className="title subtitle">{subtitle.map(Text)}</h1>
+		<motion.section className="app-section landing-section">
+			<motion.div className="landing-wrapper">
+				<motion.div>
+					<h1 className="title">{name.map(Text)}</h1>
+					<h1 className="title subtitle">{subtitle.map(Text)}</h1>
+				</motion.div>
+				<Arrow />
 			</motion.div>
-		</section>
+		</motion.section>
 	);
 }
 

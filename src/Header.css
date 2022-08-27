@@ -49,6 +49,13 @@ a.app-link {
 	text-decoration: none;
 }
 
+.app-nav-list > ul > li.selected {
+	scale: 1.2;
+	text-shadow: 0 0 4px var(--secondary-color), 0 0 2px var(--secondary-color),
+		1px 1px 1px var(--bg-color), 0px 0px 2px var(--bg-color);
+	transition: all cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s;
+}
+
 @media (max-width: 600px) {
 	.nav-list {
 		display: none;
