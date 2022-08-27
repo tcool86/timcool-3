@@ -1,7 +1,8 @@
 {
-  "name": "vite---react---typescript",
+  "name": "timcool-portfolio-site",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "author": "Tim Cool",
   "scripts": {
     "start": "npx http-server ./dist",
     "dev": "vite",

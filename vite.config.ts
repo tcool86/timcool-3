@@ -10,6 +10,7 @@ export default defineConfig({
 		alias: [{ find: '@', replacement: path.resolve('src') }],
 	},
 	build: {
+		// Does vite actually use rollup for prod 🤔
 		rollupOptions: {
 			plugins: [
 				alias({
