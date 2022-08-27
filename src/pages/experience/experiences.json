@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "title": "Web Application Developer",
+    "company": "hobbyfan",
+    "banner": {
+      "shadow": "#000",
+      "primaryColor": "#3b89c9",
+      "secondaryColor": "#fff"
+    },
+    "content": {
+      "links": [
+        {
+          "url": "https://www.facebook.com/hobbyfancom/",
+          "label": "hobbyfan"
+        }
+      ],
+      "achievements": [
+        "Reduced the time creating and uploading products to Hobbyfan by automating the process, an invaluable increase in efficiency.",
+        "Implemented various carts and payment systems.",
+        "Worked in a small team and was responsible for a variety of functions including processing orders and organizing shipments for conventions.",
+        "Created software to help automize business processes."
+      ]
+    },
+    "dateLabel": "2010-2013"
+  },
+  {
+    "id": 2,
+    "title": "Software Engineer (Technical Lead)",
+    "company": "thismoment.com",
+    "banner": {
+      "shadow": "#000",
+      "primaryColor": "#67c244",
+      "secondaryColor": "#fff"
+    },
+    "content": {
+      "links": [
+        {
+          "url": "https://www.thismoment.com/",
+          "label": "thismoment"
+        }
+      ],
+      "achievements": [
+        "Wrote and designed framework and modular components for frontend SDK.",
+        "Created web APIs to help drive frontend Content Cloud experiences.",
+        "Rewrote and refactored legacy code to make it easier to maintain and extend.",
+        "Added frontend components to Content Cloud integrating with 3rd party software such as Adobe Experience Manager."
+      ]
+    },
+    "dateLabel": "2013-2016"
+  },
+  {
+    "id": 3,
+    "title": "Software Engineer (iOS)",
+    "company": "rewardStyle.com",
+    "banner": {
+      "shadow": "#ccc",
+      "primaryColor": "#fff",
+      "secondaryColor": "#000"
+    },
+    "content": {
+      "links": [
+        {
+          "url": "https://about.rewardstyle.com/",
+          "label": "rewardStyle"
+        },
+        {
+          "url": "https://www.liketoknowit.com/",
+          "label": "LikeToKnow.it"
+        }
+      ],
+      "achievements": [
+        "Fixed core issues, bugs, and crashes within the rewardStyle iOS influencer app.",
+        "Built new features and maintained legacy code inside the influencer app. The influencer app was used to post 1k+ original pieces of content daily by 12k+ publishers. Those posts engaged 2.3M+ LIKEtoKNOW.it users generating $210 million in sales to retail partners.",
+        "Developed part of the frontend web experience for rewardStyle's Display product.",
+        "Integration of new rewardStyle APIs for mobile app consumption."
+      ]
+    },
+    "dateLabel": "2016-2017"
+  },
+  {
+    "id": 4,
+    "title": "Software Engineer (Lead)",
+    "company": "touchpoint.io",
+    "banner": {
+      "shadow": "#000",
+      "primaryColor": "#D12027",
+      "secondaryColor": "#fff"
+    },
+    "content": {
+      "links": [
+        {
+          "url": "https://touchpoint.io/",
+          "label": "touchpoint"
+        },
+        {
+          "url": "https://zerocontact.com/",
+          "label": "ZeroContact"
+        }
+      ],
+      "achievements": [
+        "Lead the frontend architecture, development, and launch of Touchpoint's consumer-facing online ordering web application.",
+        "Integrated Door Dash ordering and Dasher Delivery into Touchpoint's point of sales system",
+        "Built a merchant onboarding web application for ZeroContact with integration into Close.io CRM",
+        "Developed features for Touchpoint's customer administrative tools including a QuickBooks payment integration."
+      ]
+    },
+    "dateLabel": "2018-2020"
+  },
+  {
+    "id": 5,
+    "title": "Senior Software Engineer II",
+    "company": "Collective Health",
+    "banner": {
+      "shadow": "#000",
+      "primaryColor": "#252525",
+      "secondaryColor": "#FFF"
+    },
+    "content": {
+      "links": [
+        {
+          "url": "https://collectivehealth.com/",
+          "label": "Collective Health"
+        }
+      ],
+      "achievements": [
+        "Front-end lead for our internal plan design operations tool. The application was a large project impacting all clients and needed coordination across several teams.",
+        "Delivered improvements and bug fixes to tooling for our operations teams in time before implementation season.",
+        "Helped and mentored engineers in and outside of my team."
+      ]
+    },
+    "dateLabel": "2021-2022"
+  }
+]
