@@ -7,12 +7,13 @@ function Landing() {
 		if (letter === ' ') {
 			return <span key={index + '-' + letter}>&nbsp;</span>;
 		}
+		const rand = -250 + Math.random() * 500;
 		return (
 			<motion.span
 				key={index + '-' + letter}
 				initial={{
-					x: -200,
-					y: -100,
+					x: rand,
+					y: -200 + rand,
 					opacity: 0,
 				}}
 				animate={{
@@ -20,7 +21,10 @@ function Landing() {
 					y: 0,
 					opacity: 1,
 				}}
-				transition={{ delay: 0.8 + index * 0.1 }}
+				transition={{
+					velocity: 300,
+					delay: 0.2 + index * 0.05,
+				}}
 			>
 				{letter}
 			</motion.span>

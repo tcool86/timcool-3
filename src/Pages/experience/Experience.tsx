@@ -2,7 +2,6 @@ import './Experience.css';
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import experiences from './experiences.json';
-import Card from '../../components/Card';
 
 interface IExperienceSegmentLinks {
 	url: string;
@@ -28,14 +27,31 @@ interface IExperienceSegment {
 function ExperienceSegment(experience: IExperienceSegment) {
 	const { content, dateLabel, id, title, company } = experience;
 	const { links, achievements } = content;
-	const visible = {
+	const animate = {
+		originX: 0,
 		opacity: [0, 1],
-		translateX: [-24, 0],
+		x: [-24, 0],
+		delay: 0.2,
+	};
+	const animateTop = {
+		originX: 0,
+		opacity: [0, 1],
+		y: [-24, 0],
+		delay: 0.2,
+	};
+	const animateBottom = {
+		originX: 0,
+		opacity: [0, 1],
+		x: [24, 0],
 		delay: 0.2,
 	};
 	return (
-		<motion.article animate={visible} key={`exp-${id}`}>
-			<motion.div className="exp-container">
+		<motion.article
+			layout
+			key={`exp-article-${id}`}
+			className="exp-article"
+		>
+			<motion.div animate={animateTop} className="exp-container">
 				<motion.p className="exp-title">{title}</motion.p>
 				<motion.p className="exp-title">
 					@ {company}
@@ -44,7 +60,7 @@ function ExperienceSegment(experience: IExperienceSegment) {
 					</motion.span>
 				</motion.p>
 			</motion.div>
-			<motion.ul>
+			<motion.ul animate={animate}>
 				{achievements.map((achievement, index) => {
 					return (
 						<motion.li
@@ -57,7 +73,7 @@ function ExperienceSegment(experience: IExperienceSegment) {
 					);
 				})}
 			</motion.ul>
-			<motion.div className="exp-links">
+			<motion.div animate={animateBottom} className="exp-links">
 				{links.map((link, index) => {
 					return (
 						<motion.a
@@ -80,7 +96,7 @@ export function Experience() {
 		<React.Fragment>
 			<h2 className="title subtitle">Work Experience</h2>
 			<motion.div className="app-experience-tabs">
-				<motion.div>
+				<motion.div className="app-layer-above">
 					<nav className="app-tab-nav">
 						{experiences.map((experience: any) => {
 							const { banner, company, id } = experience;
@@ -89,12 +105,10 @@ export function Experience() {
 									whileHover={{
 										color: banner.secondaryColor,
 										backgroundColor: banner.primaryColor,
-										textShadow: `1px 1px 3px ${banner.shadow}`,
 									}}
 									whileFocus={{
 										color: banner.secondaryColor,
 										backgroundColor: banner.primaryColor,
-										textShadow: `1px 1px 3px ${banner.shadow}`,
 									}}
 									onClick={() => setTabState(id)}
 									className={

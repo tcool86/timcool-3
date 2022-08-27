@@ -1,6 +1,6 @@
 import { Fragment, PropsWithChildren, useRef } from 'react';
 import { About } from './pages/About';
-import { Contact } from './pages/Contact';
+import { Contact } from './pages/contact/Contact';
 import { Experience } from './pages/experience/Experience';
 import { Archive } from './pages/archive/Archive';
 import { Projects } from './pages/Projects';

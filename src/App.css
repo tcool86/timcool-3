@@ -2,14 +2,15 @@
 	text-align: center;
 }
 
-#root {
+:root {
 	--bg-color: #0f0c24;
 	--bg-color-transparent: #0f0c2494;
 	--primary-color: #a35050;
 	--secondary-color: #745af9;
 	--highlight-color: #bff7f7;
+	--highlight-color-transparent: #bff7f769;
 	--shadow-color: #170b0b;
-	--soft-shadow-color: #745af97f;
+	--soft-shadow-color: #745af960;
 }
 
 .app-section {
@@ -24,4 +25,16 @@
 .app-link {
 	color: var(--secondary-color);
 	font-weight: bold;
+}
+
+html::-webkit-scrollbar {
+	width: 8px; /* width of the entire scrollbar */
+}
+html::-webkit-scrollbar-track {
+	background: var(--bg-color); /* color of the tracking area */
+}
+html::-webkit-scrollbar-thumb {
+	background-color: var(--soft-shadow-color); /* color of the scroll thumb */
+	border-radius: 20px; /* roundness of the scroll thumb */
+	border: 1px solid var(--primary-color); /* creates padding around scroll thumb */
 }
