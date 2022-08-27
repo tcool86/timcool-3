@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './Input.css';
 import { motion } from 'framer-motion';
 
-const FormInput = (props: any) => {
+const Input = (props: any) => {
 	const [focused, setFocused] = useState(false);
 	const { label, errorMessage, onChange, id, ...inputProps } = props;
 
@@ -25,4 +25,4 @@ const FormInput = (props: any) => {
 	);
 };
 
-export default FormInput;
+export default Input;

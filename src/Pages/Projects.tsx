@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import './Projects.css';
 
-export function Projects() {
+export default function Projects() {
 	return (
 		<React.Fragment>
 			<motion.h2 layout className="title subtitle">
