@@ -1,7 +1,7 @@
 import React from 'react';
 import './About.css';
 import { motion } from 'framer-motion';
-import Card from '../components/Card';
+import Card from '@/components/Card.tsx';
 
 export default function About() {
 	return (

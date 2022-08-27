@@ -1,8 +1,8 @@
 import './MobileHeader.css';
 import { useRef } from 'react';
 import { motion, useCycle } from 'framer-motion';
-import { MenuToggle } from './menu/MenuToggle.tsx';
-import { Menu } from './menu/Menu.tsx';
+import { MenuToggle } from '@/menu/MenuToggle.tsx';
+import { Menu } from '@/menu/Menu.tsx';
 
 function MobileHeader() {
 	const [isOpen, toggleOpen] = useCycle(false, true);
