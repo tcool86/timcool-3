@@ -2,7 +2,7 @@ import './Contact.css';
 import { motion } from 'framer-motion';
 import Form from './Form';
 
-export function Contact() {
+export default function Contact() {
 	return (
 		<motion.article>
 			<motion.h2 layout className="title subtitle">

@@ -89,7 +89,7 @@ function ExperienceSegment(experience: IExperienceSegment) {
 	);
 }
 
-export function Experience() {
+export default function Experience() {
 	const [tabState, setTabState] = useState(5);
 	experiences.sort((a, b) => b.id - a.id);
 	return (

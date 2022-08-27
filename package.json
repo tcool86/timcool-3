@@ -1,7 +1,8 @@
 {
-  "name": "vite---react---typescript",
+  "name": "timcool-portfolio-site",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "author": "Tim Cool",
   "scripts": {
     "start": "npx http-server ./dist",
     "dev": "vite",
@@ -19,6 +20,7 @@
     "three": "^0.143.0"
   },
   "devDependencies": {
+    "@rollup/plugin-alias": "^3.1.9",
     "@types/node": "^18.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",

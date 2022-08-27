@@ -1,9 +1,9 @@
 import { Fragment, PropsWithChildren, useRef } from 'react';
-import { About } from '@/pages/About';
-import { Contact } from '@/pages/contact/Contact';
-import { Experience } from '@/pages/experience/Experience';
-import { Archive } from '@/pages/archive/Archive';
-import { Projects } from '@/pages/Projects';
+import About from '@/pages/About.tsx';
+import Contact from '@/pages/contact/Contact.tsx';
+import Experience from '@/pages/experience/Experience.tsx';
+import Archive from '@/pages/archive/Archive.tsx';
+import Projects from '@/pages/Projects.tsx';
 import { motion, useInView } from 'framer-motion';
 
 function ContentSection({ children, id }: PropsWithChildren & { id: string }) {

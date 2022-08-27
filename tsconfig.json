@@ -9,17 +9,17 @@
 		"allowSyntheticDefaultImports": true,
 		"strict": true,
 		"forceConsistentCasingInFileNames": true,
-		"module": "ESNext",
+		"module": "CommonJS",
 		"moduleResolution": "Node",
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"noEmit": true,
 		"jsx": "react-jsx",
 		"types": ["node"],
+		"baseUrl": "src/",
 		"paths": {
-			"@/*": ["./src/*"]
+			"@/*": ["./*"]
 		}
 	},
-	"include": ["src/**/*", "*"],
-	"references": [{ "path": "./tsconfig.node.json" }]
+	"include": ["src/*", "vite.config.ts"]
 }

@@ -1,11 +1,11 @@
 @font-face {
 	font-family: WalkTheMoon;
-	src: url('src/assets/WalkTheMoonSemiItalic-Rplqo.otf') format('opentype');
+	src: url('@/assets/WalkTheMoonSemiItalic-Rplqo.otf') format('opentype');
 }
 
 @font-face {
 	font-family: Roboto;
-	src: url('src/assets/RobotoRegular-3m4L.ttf') format('truetype');
+	src: url('@/assets/RobotoRegular-3m4L.ttf') format('truetype');
 }
 
 body {
