@@ -2,76 +2,39 @@
 	text-align: center;
 }
 
-#root {
+:root {
 	--bg-color: #0f0c24;
+	--bg-color-transparent: #0f0c2494;
 	--primary-color: #a35050;
-	--secondary-color: #5843c1;
-}
-
-.app-header {
-	display: flex;
-	position: sticky;
-	top: 0;
-	width: 100%;
-	background-color: var(--bg-color);
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	font-size: calc(10px + 2vmin);
-	color: white;
+	--secondary-color: #745af9;
+	--highlight-color: #bff7f7;
+	--highlight-color-transparent: #bff7f769;
+	--shadow-color: #170b0b;
+	--soft-shadow-color: #745af960;
 }
 
 .app-section {
-	min-height: 100vh;
-	padding-top: 100px;
+	display: flex;
+	justify-content: center;
+	min-height: 54vh;
+	padding-top: 120px;
 	background-color: var(--bg-color);
 	color: var(--primary-color);
 }
 
-.app-nav-list {
-	position: relative;
-	top: 0;
-}
-
-.app-nav-list > ul {
-	all: unset;
-	margin: 24px;
-	padding: 6px 14px;
-	display: flex;
-	gap: 10px;
-	box-shadow: 0 0 6px white;
-}
-
-.app-nav-list > ul > li {
-	list-style-type: none;
-	display: flex;
-	justify-items: center;
-	align-items: center;
-}
-
-.app-nav-list > ul > li > a.app-link {
-	padding: 8px;
-	background-color: rgba(0, 0, 0, 0.4);
-	font-size: large;
-	font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen,
-		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-	text-transform: uppercase;
-	text-decoration: none;
-}
-
 .app-link {
 	color: var(--secondary-color);
+	font-weight: bold;
 }
 
-@keyframes spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
+html::-webkit-scrollbar {
+	width: 8px; /* width of the entire scrollbar */
 }
-
-button {
-	font-size: calc(10px + 2vmin);
+html::-webkit-scrollbar-track {
+	background: var(--bg-color); /* color of the tracking area */
+}
+html::-webkit-scrollbar-thumb {
+	background-color: var(--soft-shadow-color); /* color of the scroll thumb */
+	border-radius: 20px; /* roundness of the scroll thumb */
+	border: 1px solid var(--primary-color); /* creates padding around scroll thumb */
 }

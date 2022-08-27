@@ -1,65 +1,16 @@
-import { useState } from 'react';
 import './App.css';
-import { About } from './About';
-import { Contact } from './Contact';
-import { Experience } from './Experience';
-import { Archive } from './Archive';
-import { Projects } from './Projects';
+import Header from './Header';
+import Content from './Content';
+import Footer from './Footer';
+import Landing from './Landing';
 
 function App() {
-	const [count, setCount] = useState(0);
-
 	return (
 		<div className="app">
-			<header className="app-header">
-				<nav className="app-nav-list">
-					<ul>
-						<li>
-							<a className="app-link" href="#about">
-								About
-							</a>
-						</li>
-						<li>
-							<a className="app-link" href="#projects">
-								Projects
-							</a>
-						</li>
-						<li>
-							<a className="app-link" href="#experience">
-								Experience
-							</a>
-						</li>
-						<li>
-							<a className="app-link" href="#archive">
-								Archive
-							</a>
-						</li>
-						<li>
-							<a className="app-link" href="#contact">
-								Contact
-							</a>
-						</li>
-					</ul>
-				</nav>
-			</header>
-			<section className="app-section" id="about">
-				<About />
-			</section>
-			<section className="app-section" id="projects">
-				<Projects />
-			</section>
-			<section className="app-section" id="experience">
-				<Experience />
-			</section>
-			<section className="app-section" id="archive">
-				<Archive />
-			</section>
-			<section className="app-section" id="contact">
-				<Contact />
-			</section>
-			<footer>
-				<p>Copyright © 2022 - Tim Cool</p>
-			</footer>
+			<Landing />
+			<Header />
+			<Content />
+			<Footer />
 		</div>
 	);
 }
