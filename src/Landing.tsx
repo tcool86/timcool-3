@@ -32,6 +32,11 @@ function Landing() {
 		);
 	};
 
+	const clickHandler = () => {
+		const about = window.document.getElementById('about');
+		window.scrollTo(0, about?.offsetTop ?? 0);
+	};
+
 	return (
 		<motion.section className="app-section landing-section">
 			<motion.div className="landing-wrapper">
@@ -41,6 +46,7 @@ function Landing() {
 				</motion.div>
 				<Arrow />
 			</motion.div>
+			<motion.div onClick={clickHandler} className="app-arrow-button" />
 		</motion.section>
 	);
 }
