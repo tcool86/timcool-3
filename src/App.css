@@ -39,6 +39,10 @@ html::-webkit-scrollbar-thumb {
 	border: 1px solid var(--primary-color); /* creates padding around scroll thumb */
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 .landing-arrow {
 	position: absolute;
 	bottom: calc(20vh + 64px);
