@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Input from './Input';
 import { motion } from 'framer-motion';
+import { baseAPI } from '../../api';
 
 const Form = () => {
 	const [values, setValues] = useState({
@@ -51,6 +52,13 @@ const Form = () => {
 
 	const handleSubmit = (e: { preventDefault: () => void }) => {
 		e.preventDefault();
+		fetch(`${baseAPI}/contact`, {
+			method: 'POST',
+			body: JSON.stringify(values),
+			credentials: 'include',
+		}).then((response) => {
+			console.log(response);
+		});
 	};
 
 	const onChange = (e: { target: { name: any; value: any } }) => {
