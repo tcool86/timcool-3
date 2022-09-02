@@ -55,7 +55,6 @@ const Form = () => {
 		fetch(`${baseAPI}/contact`, {
 			method: 'POST',
 			body: JSON.stringify(values),
-			credentials: 'include',
 		}).then((response) => {
 			console.log(response);
 		});
