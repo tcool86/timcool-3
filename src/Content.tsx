@@ -3,7 +3,7 @@ import About from '@/pages/About.tsx';
 import Contact from '@/pages/contact/Contact.tsx';
 import Experience from '@/pages/experience/Experience.tsx';
 import Archive from '@/pages/archive/Archive.tsx';
-import Projects from '@/pages/Projects.tsx';
+import Projects from '@/pages/projects/Projects.tsx';
 import { motion, useInView } from 'framer-motion';
 
 function ContentSection({ children, id }: PropsWithChildren & { id: string }) {
