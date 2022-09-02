@@ -54,7 +54,12 @@ const Form = () => {
 		e.preventDefault();
 		fetch(`${baseAPI}/contact`, {
 			method: 'POST',
-			body: JSON.stringify(values),
+			body: new URLSearchParams(Object.entries(values)).toString(),
+			mode: 'cors',
+			headers: {
+				'Content-Type': 'application/x-www-form-urlencoded',
+			},
+			credentials: 'include',
 		}).then((response) => {
 			console.log(response);
 		});
