@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Input from './Input';
 import { motion } from 'framer-motion';
 import { baseAPI } from '../../api';
+import './Form.css';
 
 const Form = () => {
 	const [values, setValues] = useState({
@@ -10,6 +11,9 @@ const Form = () => {
 		subject: '',
 		message: '',
 	});
+	const [disableSubmit, setDisableSubmit] = useState(false);
+	const [successMessage, setSuccessMessage] = useState(false);
+	const [errorMessage, setErrorMessage] = useState(false);
 
 	const inputs = [
 		{
@@ -52,6 +56,7 @@ const Form = () => {
 
 	const handleSubmit = (e: { preventDefault: () => void }) => {
 		e.preventDefault();
+		setDisableSubmit(true);
 		fetch(`${baseAPI}/contact`, {
 			method: 'POST',
 			body: new URLSearchParams(Object.entries(values)).toString(),
@@ -60,9 +65,20 @@ const Form = () => {
 				'Content-Type': 'application/x-www-form-urlencoded',
 			},
 			credentials: 'include',
-		}).then((response) => {
-			console.log(response);
-		});
+		})
+			.then((response) => {
+				console.log(response);
+				setDisableSubmit(false);
+				setSuccessMessage(true);
+			})
+			.catch((reason) => {
+				console.error(reason);
+				setDisableSubmit(false);
+				setErrorMessage(true);
+				setTimeout(() => {
+					setErrorMessage(false);
+				}, 3000);
+			});
 	};
 
 	const onChange = (e: { target: { name: any; value: any } }) => {
@@ -91,7 +107,26 @@ const Form = () => {
 					onChange={onChange}
 				/>
 			))}
-			<motion.button className="app-btn">Send</motion.button>
+			{successMessage ? (
+				<motion.div layout className="app-contact-message success">
+					Sent ✓
+				</motion.div>
+			) : (
+				<motion.button
+					layout
+					disabled={disableSubmit}
+					className="app-btn"
+				>
+					Send
+				</motion.button>
+			)}
+			{errorMessage ? (
+				<motion.div layout className="app-contact-message error">
+					Error sending message, try again.
+				</motion.div>
+			) : (
+				<></>
+			)}
 		</motion.form>
 	);
 };
