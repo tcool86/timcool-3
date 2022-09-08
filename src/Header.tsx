@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './Header.css';
-import { motion } from 'framer-motion';
+import {
+	motion,
+	useScroll,
+	useVelocity,
+	useAnimationFrame,
+} from 'framer-motion';
 import MobileHeader from './MobileHeader';
 
 function Header() {
 	const [current, setCurrent] = useState('#about');
 	const [clicked, setClicked] = useState('');
+	const { scrollY } = useScroll();
+	const scrollVelocity = useVelocity(scrollY);
+	const timer = useRef<number>(0);
 
 	const handler = (entries: any) => {
 		const section = entries[0];
@@ -25,10 +33,17 @@ function Header() {
 	const handleClick = (id: string) => {
 		setCurrent(`#${id}`);
 		setClicked(`#${id}`);
-		setTimeout(() => {
-			setClicked('');
-		}, 800);
 	};
+
+	useAnimationFrame((timestamp) => {
+		if (clicked !== '') {
+			timer.current += timestamp / 1000;
+		}
+		if (timer.current > 500 && scrollVelocity.getVelocity() === 0) {
+			timer.current = 0;
+			setClicked('');
+		}
+	});
 
 	const observer = new window.IntersectionObserver(handler, { threshold: 1 });
 
