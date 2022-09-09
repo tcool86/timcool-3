@@ -1,10 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './Header.css';
-import { motion } from 'framer-motion';
+import {
+	motion,
+	useScroll,
+	useVelocity,
+	useAnimationFrame,
+} from 'framer-motion';
 import MobileHeader from './MobileHeader';
 
 function Header() {
 	const [current, setCurrent] = useState('#about');
+	const [clicked, setClicked] = useState('');
+	const { scrollY } = useScroll();
+	const scrollVelocity = useVelocity(scrollY);
+	const timer = useRef<number>(0);
+
 	const handler = (entries: any) => {
 		const section = entries[0];
 		const { id } = section.target;
@@ -13,9 +23,29 @@ function Header() {
 		}
 	};
 
-	const observer = new window.IntersectionObserver(handler, {
-		threshold: 1,
+	const isSelected = (id: string) => {
+		if (clicked === '') {
+			return current === id ? 'selected' : '';
+		}
+		return clicked === id ? 'selected' : '';
+	};
+
+	const handleClick = (id: string) => {
+		setCurrent(`#${id}`);
+		setClicked(`#${id}`);
+	};
+
+	useAnimationFrame((timestamp) => {
+		if (clicked !== '') {
+			timer.current += timestamp / 1000;
+		}
+		if (timer.current > 500 && scrollVelocity.getVelocity() === 0) {
+			timer.current = 0;
+			setClicked('');
+		}
 	});
+
+	const observer = new window.IntersectionObserver(handler, { threshold: 1 });
 
 	const sections = [
 		'#about',
@@ -40,54 +70,40 @@ function Header() {
 				<motion.nav className="app-nav-list nav-list">
 					<motion.ul>
 						<motion.li
-							className={current === '#about' ? 'selected' : ''}
-							onClick={() => {
-								setCurrent('#about');
-							}}
+							className={isSelected('#about')}
+							onClick={() => handleClick('about')}
 						>
 							<a className="app-link" href="#about">
 								About
 							</a>
 						</motion.li>
 						<motion.li
-							className={
-								current === '#experience' ? 'selected' : ''
-							}
-							onClick={() => {
-								setCurrent('#experience');
-							}}
+							className={isSelected('#experience')}
+							onClick={() => handleClick('experience')}
 						>
 							<a className="app-link" href="#experience">
 								Experience
 							</a>
 						</motion.li>
 						<motion.li
-							className={
-								current === '#projects' ? 'selected' : ''
-							}
-							onClick={() => {
-								setCurrent('#projects');
-							}}
+							className={isSelected('#projects')}
+							onClick={() => handleClick('projects')}
 						>
 							<a className="app-link" href="#projects">
 								Projects
 							</a>
 						</motion.li>
 						<motion.li
-							className={current === '#archive' ? 'selected' : ''}
-							onClick={() => {
-								setCurrent('#archive');
-							}}
+							className={isSelected('#archive')}
+							onClick={() => handleClick('archive')}
 						>
 							<a className="app-link" href="#archive">
 								Archive
 							</a>
 						</motion.li>
 						<motion.li
-							className={current === '#contact' ? 'selected' : ''}
-							onClick={() => {
-								setCurrent('#contact');
-							}}
+							className={isSelected('#contact')}
+							onClick={() => handleClick('contact')}
 						>
 							<a className="app-link" href="#contact">
 								Contact
