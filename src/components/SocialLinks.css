@@ -1,0 +1,55 @@
+:root {
+	--linked-in: rgb(21, 105, 191);
+	--stackoverflow: #f58025;
+	--github: #fff;
+	--discord: rgb(88, 106, 209);
+	--medium-blog: #fff;
+}
+
+.app-social-links {
+	all: unset;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 40px;
+	gap: 20px;
+}
+
+.app-social-links li {
+	list-style: none;
+}
+
+a svg {
+	fill: var(--secondary-color);
+	height: 48px;
+	width: 48px;
+	transition: all 0.2s;
+	transform: rotateX(0) scale(1);
+}
+
+a:hover svg {
+	transform: rotateX(0) scale(1.2);
+}
+
+a:active svg {
+	transform: rotateX(45deg) scale(1.4);
+}
+
+.linked-in a:hover svg {
+	fill: var(--linked-in);
+}
+.stackoverflow a:hover svg {
+	fill: var(--stackoverflow);
+}
+
+.github a:hover svg {
+	fill: var(--github);
+}
+
+.discord a:hover svg {
+	fill: var(--discord);
+}
+
+.medium-blog a:hover svg {
+	fill: var(--medium-blog);
+}
