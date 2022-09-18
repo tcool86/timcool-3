@@ -4,6 +4,7 @@
 	--github: #fff;
 	--discord: rgb(88, 106, 209);
 	--medium-blog: #fff;
+	--twitter: #2daae1;
 }
 
 .app-social-links {
@@ -52,4 +53,8 @@ a:active svg {
 
 .medium-blog a:hover svg {
 	fill: var(--medium-blog);
+}
+
+.twitter a:hover svg {
+	fill: var(--twitter);
 }
