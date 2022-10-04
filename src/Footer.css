@@ -5,3 +5,9 @@
 	color: var(--highlight-color);
 	border-top: 1px solid var(--primary-color);
 }
+
+@media (max-width: 600px) {
+	.app-footer {
+		margin-top: 4em;
+	}
+}

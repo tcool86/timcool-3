@@ -139,8 +139,28 @@
 	.app-experience-tabs {
 		flex-direction: column;
 	}
-	.app-experience-tabs article {
-		left: 0;
+	.app-tab-nav {
 		margin: 2em;
+		margin-bottom: 0.5em;
+		border-right: 1px solid var(--primary-color);
+	}
+	.app-experience-tabs .exp-article {
+		left: 0;
+		margin: auto;
+		padding: 1em;
+		padding-bottom: 2em;
+		width: calc(100% - 2em);
+		border: none;
+		border-bottom: 1px solid var(--primary-color);
+	}
+	.exp-achievement:first-of-type {
+		margin-top: 1em;
+	}
+	.exp-article ul {
+		margin-block-start: 4px;
+		padding-inline-start: 4px;
+	}
+	.exp-links {
+		justify-content: center;
 	}
 }

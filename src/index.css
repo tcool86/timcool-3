@@ -55,7 +55,10 @@ html {
 .app-arrow-button {
 	cursor: pointer;
 	width: 100%;
-	height: calc(30vh);
+	height: 33vh;
+	width: 50vw;
+	border-top-left-radius: 6vw;
+	border-top-right-radius: 6vw;
 	margin: auto;
 	background-color: var(--highlight-color);
 	position: absolute;
@@ -71,4 +74,10 @@ html {
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
 		monospace;
+}
+
+@media (max-width: 600px) {
+	.app-arrow-button {
+		width: calc(100vw - 2em);
+	}
 }
