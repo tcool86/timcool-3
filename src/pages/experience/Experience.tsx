@@ -2,6 +2,7 @@ import './Experience.css';
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import experiences from './experiences.json';
+import isMobile from 'is-mobile';
 
 interface IExperienceSegmentLinks {
 	url: string;
@@ -94,42 +95,51 @@ export default function Experience() {
 	experiences.sort((a, b) => b.id - a.id);
 	return (
 		<React.Fragment>
-			<h2 className="title subtitle">Work Experience</h2>
+			<motion.h2 className="title subtitle">Work Experience</motion.h2>
 			<motion.div className="app-experience-tabs">
 				<motion.div className="app-layer-above">
-					<nav className="app-tab-nav">
+					<motion.nav className="app-tab-nav">
 						{experiences.map((experience: any) => {
 							const { banner, company, id } = experience;
+							const segment: IExperienceSegment = experience;
 							return (
-								<motion.button
-									whileHover={{
-										color: banner.secondaryColor,
-										backgroundColor: banner.primaryColor,
-									}}
-									whileFocus={{
-										color: banner.secondaryColor,
-										backgroundColor: banner.primaryColor,
-									}}
-									onClick={() => setTabState(id)}
-									className={
-										tabState === id
-											? 'app-tab selected'
-											: 'app-tab'
-									}
-									key={`btn-${id}-${company[0]}`}
-								>
-									{company}
-								</motion.button>
+								<>
+									<motion.button
+										whileHover={{
+											color: banner.secondaryColor,
+											backgroundColor:
+												banner.primaryColor,
+										}}
+										whileFocus={{
+											color: banner.secondaryColor,
+											backgroundColor:
+												banner.primaryColor,
+										}}
+										onClick={() => setTabState(id)}
+										className={
+											tabState === id
+												? 'app-tab selected'
+												: 'app-tab'
+										}
+										key={`btn-${id}-${company[0]}`}
+									>
+										{company}
+									</motion.button>
+									{isMobile() &&
+										tabState === id &&
+										ExperienceSegment(segment)}
+								</>
 							);
 						})}
-					</nav>
+					</motion.nav>
 				</motion.div>
-				{experiences.map((experience: any) => {
-					if (tabState === experience.id) {
-						const segment: IExperienceSegment = experience;
-						return ExperienceSegment(segment);
-					}
-				})}
+				{!isMobile() &&
+					experiences.map((experience: any) => {
+						if (tabState === experience.id) {
+							const segment: IExperienceSegment = experience;
+							return ExperienceSegment(segment);
+						}
+					})}
 			</motion.div>
 		</React.Fragment>
 	);

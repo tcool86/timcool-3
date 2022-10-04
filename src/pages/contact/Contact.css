@@ -61,3 +61,12 @@ input.app-input:invalid[focused='true'] {
 input.app-input:invalid[focused='true'] ~ span {
 	display: block;
 }
+
+@media (max-width: 600px) {
+	#contact form {
+		min-width: calc(100vw - 4em);
+	}
+	.app-contact-inline {
+		flex-direction: column;
+	}
+}
