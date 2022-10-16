@@ -2,24 +2,17 @@
 	text-align: center;
 }
 
-:root {
-	--bg-color: #0f0c24;
-	--bg-color-transparent: #0f0c2494;
-	--primary-color: #a35050;
-	--secondary-color: #745af9;
-	--highlight-color: #bff7f7;
-	--highlight-color-transparent: #bff7f769;
-	--shadow-color: #170b0b;
-	--soft-shadow-color: #745af960;
-}
-
 .app-section {
 	display: flex;
 	justify-content: center;
-	min-height: 66vh;
+	min-height: 90vh;
 	padding-top: 120px;
 	background-color: var(--bg-color);
 	color: var(--primary-color);
+}
+
+.app-section:last-of-type {
+	min-height: 50vh;
 }
 
 .app-link {
@@ -27,45 +20,28 @@
 	font-weight: bold;
 }
 
-html::-webkit-scrollbar {
-	width: 8px; /* width of the entire scrollbar */
-}
-html::-webkit-scrollbar-track {
-	background: var(--bg-color); /* color of the tracking area */
-}
-html::-webkit-scrollbar-thumb {
-	background-color: var(--soft-shadow-color); /* color of the scroll thumb */
-	border-radius: 20px; /* roundness of the scroll thumb */
-	border: 1px solid var(--primary-color); /* creates padding around scroll thumb */
-}
-
-html {
-	scroll-behavior: smooth;
-}
-
-.landing-arrow {
-	position: absolute;
-	bottom: calc(20vh + 64px);
-	transform-origin: 0 0;
-	width: 64px;
-	margin: auto;
-}
-
-.landing-arrow path {
-	stroke-width: 2px;
-}
-
-.landing-arrow path:nth-child(n + 2) {
-	position: relative;
-	translate: 0 2px;
-}
-
-.landing-wrapper {
-	margin-top: 20vh;
-	position: relative;
-	min-height: 100vh;
+.title {
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
+	justify-content: center;
+	width: 100%;
+	font-size: calc(10px + 10vmin);
+	font-family: WalkTheMoon;
+}
+
+.subtitle {
+	font-size: calc(10px + 5vmin);
+}
+
+.title > span {
+	text-shadow: 3px 3px var(--highlight-color);
+}
+
+.bullet {
+	width: 0;
+	height: 0;
+	margin: 6px 6px 6px 0;
+	background: transparent;
+	border-top: 0.2em solid transparent;
+	border-bottom: 0.2em solid transparent;
+	border-left: 0.2em solid var(--secondary-color);
 }

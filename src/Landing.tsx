@@ -1,3 +1,4 @@
+import './Landing.css';
 import { motion } from 'framer-motion';
 import Arrow from './Arrow';
 
