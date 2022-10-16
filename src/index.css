@@ -8,6 +8,17 @@
 	src: url('@/assets/RobotoRegular-3m4L.ttf') format('truetype');
 }
 
+:root {
+	--bg-color: #0f0c24;
+	--bg-color-transparent: #0f0c2494;
+	--primary-color: #a35050;
+	--secondary-color: #745af9;
+	--highlight-color: #bff7f7;
+	--highlight-color-transparent: #bff7f769;
+	--shadow-color: #170b0b;
+	--soft-shadow-color: #745af960;
+}
+
 body {
 	margin: 0;
 	font-family: Roboto, sans-serif;
@@ -16,68 +27,23 @@ body {
 }
 
 html {
+	scroll-behavior: smooth;
 	background-color: var(--bg-color);
 }
 
-.title {
-	display: flex;
-	justify-content: center;
-	width: 100%;
-	font-size: calc(10px + 10vmin);
-	font-family: WalkTheMoon;
+html::-webkit-scrollbar {
+	width: 8px; /* width of the entire scrollbar */
 }
-
-.subtitle {
-	font-size: calc(10px + 5vmin);
+html::-webkit-scrollbar-track {
+	background: var(--bg-color); /* color of the tracking area */
 }
-
-.title > span {
-	text-shadow: 3px 3px var(--highlight-color);
-}
-
-.bullet {
-	width: 0;
-	height: 0;
-	margin: 6px 6px 6px 0;
-	background: transparent;
-	border-top: 0.2em solid transparent;
-	border-bottom: 0.2em solid transparent;
-	border-left: 0.2em solid var(--secondary-color);
-}
-
-.landing-section {
-	min-height: 100vh;
-	padding-top: 0;
-	padding-bottom: 100px;
-	align-items: center;
-}
-
-.app-arrow-button {
-	cursor: pointer;
-	width: 100%;
-	height: 33vh;
-	width: 50vw;
-	border-top-left-radius: 6vw;
-	border-top-right-radius: 6vw;
-	margin: auto;
-	background-color: var(--highlight-color);
-	position: absolute;
-	opacity: 0;
-	bottom: 0;
-	transition: all 0.2s;
-}
-
-.app-arrow-button:hover {
-	opacity: 0.05;
+html::-webkit-scrollbar-thumb {
+	background-color: var(--soft-shadow-color); /* color of the scroll thumb */
+	border-radius: 20px; /* roundness of the scroll thumb */
+	border: 1px solid var(--primary-color); /* creates padding around scroll thumb */
 }
 
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
 		monospace;
-}
-
-@media (max-width: 600px) {
-	.app-arrow-button {
-		width: calc(100vw - 2em);
-	}
 }
