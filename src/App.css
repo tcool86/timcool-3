@@ -5,8 +5,9 @@
 .app-section {
 	display: flex;
 	justify-content: center;
-	min-height: 90vh;
-	padding-top: 120px;
+	min-height: 120vh;
+	padding-top: 96px;
+	margin-bottom: 96px;
 	background-color: var(--bg-color);
 	color: var(--primary-color);
 }

@@ -4,19 +4,39 @@ import Contact from '@/pages/contact/Contact.tsx';
 import Experience from '@/pages/experience/Experience.tsx';
 import Archive from '@/pages/archive/Archive.tsx';
 import Projects from '@/pages/projects/Projects.tsx';
-import { motion, useInView } from 'framer-motion';
+import {
+	motion,
+	MotionValue,
+	useInView,
+	useScroll,
+	useVelocity,
+} from 'framer-motion';
+import { usePortfolioState } from './state';
 
-function ContentSection({ children, id }: PropsWithChildren & { id: string }) {
+function ContentSection({
+	children,
+	id,
+	scrollY,
+}: PropsWithChildren & { id: string; scrollY: MotionValue<number> }) {
 	const ref = useRef(null);
-	const isInView = useInView(ref, { once: true });
+	const isInView = useInView(ref, { once: false });
+	const yVelocity = useVelocity(scrollY).getVelocity();
+	const moveIn = 'translateY(96px)';
+	const moveOut = 'translateY(-96px)';
+	const transformIn = yVelocity >= 0 ? moveIn : moveOut;
+	const updateSection = usePortfolioState((state) => state.updateSection);
+
+	if (isInView) {
+		updateSection(id);
+	}
 	return (
 		<section className="app-section" id={id} ref={ref}>
 			<motion.div
 				style={{
-					transform: isInView ? 'none' : 'translateY(96px)',
+					transform: isInView ? 'none' : transformIn,
 					opacity: isInView ? 1 : 0,
 					transition:
-						'all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s',
+						'all 0.54s cubic-bezier(0.17, 0.55, 0.55, 1) 0.33s',
 				}}
 			>
 				{children}
@@ -26,21 +46,22 @@ function ContentSection({ children, id }: PropsWithChildren & { id: string }) {
 }
 
 function Content() {
+	const { scrollY } = useScroll();
 	return (
 		<Fragment>
-			<ContentSection id="about">
+			<ContentSection id="about" scrollY={scrollY}>
 				<About />
 			</ContentSection>
-			<ContentSection id="experience">
+			<ContentSection id="experience" scrollY={scrollY}>
 				<Experience />
 			</ContentSection>
-			<ContentSection id="projects">
+			<ContentSection id="projects" scrollY={scrollY}>
 				<Projects />
 			</ContentSection>
-			<ContentSection id="archive">
+			<ContentSection id="archive" scrollY={scrollY}>
 				<Archive />
 			</ContentSection>
-			<ContentSection id="contact">
+			<ContentSection id="contact" scrollY={scrollY}>
 				<Contact />
 			</ContentSection>
 		</Fragment>
