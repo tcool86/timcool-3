@@ -7,7 +7,7 @@
 	border-right: transparent;
 	color: var(--highlight-color);
 	text-shadow: 1px 1px 1px var(--soft-shadow-color);
-	max-width: 800px;
+	max-width: 640px;
 }
 
 .app-card p {
