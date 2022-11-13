@@ -4,3 +4,7 @@
 	border-radius: 50%;
 	background: var(--secondary-color);
 }
+
+.app-section p {
+	font-size: calc(12px + 1vh);
+}
