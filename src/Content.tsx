@@ -1,9 +1,9 @@
 import { Fragment, PropsWithChildren, useRef } from 'react';
-import About from '@/pages/About.tsx';
-import Contact from '@/pages/contact/Contact.tsx';
-import Experience from '@/pages/experience/Experience.tsx';
-import Archive from '@/pages/archive/Archive.tsx';
-import Projects from '@/pages/projects/Projects.tsx';
+import About from '@/pages/About';
+import Contact from '@/pages/contact/Contact';
+import Archive from '@/pages/archive/Archive';
+import Experience from '@/pages/experience/Experience';
+import Projects from '@/pages/projects/Projects';
 import {
 	motion,
 	MotionValue,

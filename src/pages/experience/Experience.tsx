@@ -91,7 +91,7 @@ function ExperienceSegment(experience: IExperienceSegment) {
 }
 
 export default function Experience() {
-	const [tabState, setTabState] = useState(5);
+	const [tabState, setTabState] = useState(7);
 	experiences.sort((a, b) => b.id - a.id);
 	return (
 		<React.Fragment>

@@ -46,3 +46,8 @@
 	border-bottom: 0.2em solid transparent;
 	border-left: 0.2em solid var(--secondary-color);
 }
+
+a:not(.app-link) {
+	color: var(--highlight-color);
+	text-shadow: 2px 2px var(--secondary-color);
+}

@@ -1,5 +1,5 @@
 .app-footer {
-	margin-top: calc(4em + 20vh);
+	margin-top: calc(20vh);
 	padding: 2em;
 	background-color: var(--bg-color);
 	color: var(--highlight-color);

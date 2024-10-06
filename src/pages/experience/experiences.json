@@ -130,5 +130,57 @@
       ]
     },
     "dateLabel": "2021-2022"
+  },
+  {
+    "id": 6,
+    "title": "Contractor",
+    "company": "Solvd (Google)",
+    "banner": {
+      "shadow": "#FFF",
+      "primaryColor": "#1FCA69",
+      "secondaryColor": "#000"
+    },
+    "content": {
+      "links": [
+        {
+          "url": "https://www.solvd.com/",
+          "label": "solvd."
+        }
+      ],
+      "achievements": [
+        "3-month contract with Google to help with finishing the development of an internal data center monitoring tool.",
+		"Brought the project to completion and helped with the transition to the internal team.",
+		"Primarily worked on test coverage. Acheived 95% test coverage for a 4-year project."
+      ]
+    },
+    "dateLabel": "2022-2022"
+  },
+  {
+    "id": 7,
+    "title": "Senior Software Engineer (Lead)",
+    "company": "Navan",
+    "banner": {
+      "shadow": "#000",
+      "primaryColor": "#7610C6",
+      "secondaryColor": "#FFF"
+    },
+    "content": {
+      "links": [
+        {
+          "url": "https://navan.com/",
+          "label": "navan"
+        },
+		{
+		  "url": "https://navan.com/product/expense-management#Product_Feature_expense-corporate_cards",
+		  "label": "Navan Connect"
+		}
+      ],
+      "achievements": [
+        "Helped bring User web facing features to parity with mobile app along with rebranding from TripActions to Navan.",
+		"Introduced centralized state management to the web app along with other technologies to improve developer productivity.",
+		"Lead the frontend development on Connect, a new product for Navan."
+      ]
+    },
+    "dateLabel": "2022-present"
   }
 ]

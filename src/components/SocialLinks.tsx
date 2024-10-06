@@ -1,6 +1,6 @@
 import './SocialLinks.css';
 import { motion } from 'framer-motion';
-import { LinkedInIcon, GithubIcon, TwitterIcon } from '../assets/Icons';
+import { LinkedInIcon, GithubIcon, MediumIcon, StackOverflowIcon, TwitterIcon, DiscordIcon } from '../assets/Icons';
 
 export default function SocialLinks() {
 	const socialLinks = [
@@ -9,11 +9,11 @@ export default function SocialLinks() {
 			name: 'linked-in',
 			icon: LinkedInIcon,
 		},
-		// {
-		// 	link: 'https://stackoverflow.com/users/1347616/tcool',
-		// 	name: 'stackoverflow',
-		// 	icon: StackOverflowIcon,
-		// },
+		{
+			link: 'https://stackoverflow.com/users/1347616/tcool',
+			name: 'stackoverflow',
+			icon: StackOverflowIcon,
+		},
 		{
 			link: 'https://twitter.com/timothymcool',
 			name: 'twitter',
@@ -24,16 +24,16 @@ export default function SocialLinks() {
 			name: 'github',
 			icon: GithubIcon,
 		},
-		// {
-		// 	link: 'https://discordapp.com/users/349036886813310976',
-		// 	name: 'discord',
-		// 	icon: DiscordIcon,
-		// },
-		// {
-		// 	link: 'https://tcool.medium.com',
-		// 	name: 'medium-blog',
-		// 	icon: MediumIcon,
-		// },
+		{
+			link: 'https://discordapp.com/users/349036886813310976',
+			name: 'discord',
+			icon: DiscordIcon,
+		},
+		{
+			link: 'https://tcool.medium.com',
+			name: 'medium-blog',
+			icon: MediumIcon,
+		},
 	];
 	return (
 		<motion.ul className="app-social-links">

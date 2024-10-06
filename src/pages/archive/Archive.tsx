@@ -8,7 +8,7 @@ export default function Archive() {
 			<motion.h2 layout className="title subtitle">
 				Archive
 			</motion.h2>
-			<motion.p layout>Coming soon...</motion.p>
+			<motion.p layout>Coming someday...</motion.p>
 		</React.Fragment>
 	);
 }

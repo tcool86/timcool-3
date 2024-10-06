@@ -6,7 +6,7 @@ function Footer() {
 	return (
 		<motion.footer className="app-footer">
 			<motion.div>{SocialLinks()}</motion.div>
-			<motion.p>Copyright &copy; 2022 - Tim Cool</motion.p>
+			<motion.p>Copyright &copy; 2024 - Tim Cool</motion.p>
 		</motion.footer>
 	);
 }
