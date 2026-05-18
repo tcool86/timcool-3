@@ -1,0 +1,66 @@
+---
+import {
+	LinkedInIcon,
+	GithubIcon,
+	MediumIcon,
+	StackOverflowIcon,
+	TwitterIcon,
+	DiscordIcon,
+} from '@/components/react/Icons';
+
+const links = [
+	{
+		link: 'https://www.linkedin.com/in/tim-cool/',
+		name: 'linked-in',
+		label: 'LinkedIn',
+		Icon: LinkedInIcon,
+	},
+	{
+		link: 'https://stackoverflow.com/users/1347616/tcool',
+		name: 'stackoverflow',
+		label: 'Stack Overflow',
+		Icon: StackOverflowIcon,
+	},
+	{
+		link: 'https://twitter.com/timothymcool',
+		name: 'twitter',
+		label: 'Twitter',
+		Icon: TwitterIcon,
+	},
+	{
+		link: 'https://github.com/tcool86/',
+		name: 'github',
+		label: 'GitHub',
+		Icon: GithubIcon,
+	},
+	{
+		link: 'https://discordapp.com/users/349036886813310976',
+		name: 'discord',
+		label: 'Discord',
+		Icon: DiscordIcon,
+	},
+	{
+		link: 'https://tcool.medium.com',
+		name: 'medium-blog',
+		label: 'Medium',
+		Icon: MediumIcon,
+	},
+];
+---
+
+<ul class="app-social-links">
+	{
+		links.map(({ link, name, label, Icon }) => (
+			<li class={name}>
+				<a
+					href={link}
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label={label}
+				>
+					<Icon />
+				</a>
+			</li>
+		))
+	}
+</ul>

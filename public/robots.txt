@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://www.timcool.me/sitemap.xml
+Sitemap: https://www.timcool.me/sitemap-index.xml

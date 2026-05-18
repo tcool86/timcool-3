@@ -1,25 +1,14 @@
 {
+	"extends": "astro/tsconfigs/strict",
 	"compilerOptions": {
-		"target": "ESNext",
-		"useDefineForClassFields": true,
-		"lib": ["DOM", "DOM.Iterable", "ESNext"],
-		"allowJs": false,
-		"skipLibCheck": true,
-		"esModuleInterop": false,
-		"allowSyntheticDefaultImports": true,
-		"strict": true,
-		"forceConsistentCasingInFileNames": true,
-		"module": "CommonJS",
-		"moduleResolution": "Node",
-		"resolveJsonModule": true,
-		"isolatedModules": true,
-		"noEmit": true,
 		"jsx": "react-jsx",
-		"types": ["node"],
-		"baseUrl": "src/",
+		"jsxImportSource": "react",
+		"baseUrl": ".",
 		"paths": {
-			"@/*": ["./*"]
-		}
+			"@/*": ["src/*"]
+		},
+		"types": ["node", "@testing-library/jest-dom", "vitest/globals"]
 	},
-	"include": ["src/*", "vite.config.ts"]
+	"include": [".astro/types.d.ts", "**/*"],
+	"exclude": ["dist", "node_modules", "playwright-report", "test-results"]
 }

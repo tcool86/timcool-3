@@ -1,0 +1,1 @@
+export const baseAPI = 'https://timcool-3-api.up.railway.app';

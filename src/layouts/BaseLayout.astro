@@ -1,0 +1,41 @@
+---
+import '@/styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+	keywords?: string;
+}
+
+const {
+	title = 'timcool | Software Engineer | Personal Site',
+	description = 'The personal site of Timothy Cool, a software engineer living in Silicon Valley',
+	keywords = 'software, engineer, programming, gaming, tim cool, timothy cool, silicon valley, bay area',
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<link rel="canonical" href={canonical} />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+		<meta name="author" content="Tim Cool" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonical} />
+	</head>
+	<body>
+		<div class="app">
+			<slot />
+		</div>
+	</body>
+</html>

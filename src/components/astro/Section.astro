@@ -1,0 +1,33 @@
+---
+import type { SectionId } from '@/state/portfolio';
+
+interface Props {
+	id: SectionId;
+}
+
+const { id } = Astro.props;
+---
+
+<section class="app-section section-reveal" id={id} data-section-id={id}>
+	<div class="section-reveal__inner">
+		<slot />
+	</div>
+</section>
+
+<style is:global>
+	.section-reveal__inner {
+		transform: translateY(96px);
+		opacity: 0;
+		transition: transform 0.54s cubic-bezier(0.17, 0.55, 0.55, 1) 0.33s,
+			opacity 0.54s cubic-bezier(0.17, 0.55, 0.55, 1) 0.33s;
+	}
+
+	.section-reveal.is-in-view .section-reveal__inner {
+		transform: none;
+		opacity: 1;
+	}
+
+	.section-reveal.is-out-up .section-reveal__inner {
+		transform: translateY(-96px);
+	}
+</style>

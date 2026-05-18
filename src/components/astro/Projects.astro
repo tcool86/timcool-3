@@ -1,0 +1,32 @@
+---
+import ProjectCard, {
+	type Props as ProjectCardProps,
+} from './ProjectCard.astro';
+
+const projects: ProjectCardProps[] = [
+	{
+		name: 'Zylem',
+		url: 'https://github.com/zylem-game-lib',
+		description:
+			'A powerful and easy-to-use framework for creating simple 3D digital interactive applications using TypeScript.',
+		status: { label: 'Active', tone: 'active' },
+		tags: ['TypeScript', 'Three.js', 'Game Dev', 'Open Source'],
+		actions: [
+			{
+				label: 'Live Demo',
+				url: 'https://zylem.onrender.com/',
+				primary: true,
+			},
+			{
+				label: 'Source',
+				url: 'https://github.com/zylem-game-lib',
+			},
+		],
+	},
+];
+---
+
+<h2 class="title subtitle">Projects</h2>
+<div class="projects-grid">
+	{projects.map((project) => <ProjectCard {...project} />)}
+</div>

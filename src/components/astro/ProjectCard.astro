@@ -1,0 +1,137 @@
+---
+export type ProjectStatusTone = 'active' | 'wip' | 'archived';
+
+export interface ProjectAction {
+	label: string;
+	url: string;
+	primary?: boolean;
+}
+
+export interface ProjectMetric {
+	label: string;
+	value: string;
+}
+
+export interface ProjectThumbnail {
+	/** External image / video URL. Omit to render the monogram placeholder. */
+	src?: string;
+	alt?: string;
+	monogram?: string;
+}
+
+export interface Props {
+	name: string;
+	url?: string;
+	description: string;
+	status?: { label: string; tone?: ProjectStatusTone };
+	tags?: string[];
+	metrics?: ProjectMetric[];
+	actions?: ProjectAction[];
+	thumbnail?: ProjectThumbnail;
+}
+
+const {
+	name,
+	url,
+	description,
+	status,
+	tags = [],
+	metrics = [],
+	actions = [],
+	thumbnail,
+} = Astro.props;
+
+const monogram = thumbnail?.monogram ?? name.charAt(0);
+const statusTone = status?.tone ?? 'active';
+---
+
+<article class="project-card">
+	<div class="project-card__thumb">
+		{
+			thumbnail?.src ? (
+				<img
+					src={thumbnail.src}
+					alt={thumbnail.alt ?? `${name} preview`}
+					loading="lazy"
+				/>
+			) : (
+				<span class="project-card__monogram" aria-hidden="true">
+					{monogram}
+				</span>
+			)
+		}
+	</div>
+
+	<div class="project-card__body">
+		<header class="project-card__header">
+			<h3 class="project-card__title">
+				{
+					url ? (
+						<a href={url} target="_blank" rel="noopener noreferrer">
+							{name}
+						</a>
+					) : (
+						name
+					)
+				}
+			</h3>
+			{
+				status && (
+					<span
+						class:list={[
+							'project-card__status',
+							`project-card__status--${statusTone}`,
+						]}
+					>
+						{status.label}
+					</span>
+				)
+			}
+		</header>
+
+		<p class="project-card__desc">{description}</p>
+
+		{
+			tags.length > 0 && (
+				<ul class="project-card__tags" aria-label="Tech stack">
+					{tags.map((tag) => (
+						<li>{tag}</li>
+					))}
+				</ul>
+			)
+		}
+
+		{
+			metrics.length > 0 && (
+				<dl class="project-card__meta">
+					{metrics.map((m) => (
+						<div class="project-card__meta-item">
+							<dt>{m.label}</dt>
+							<dd>{m.value}</dd>
+						</div>
+					))}
+				</dl>
+			)
+		}
+
+		{
+			actions.length > 0 && (
+				<div class="project-card__actions">
+					{actions.map((a) => (
+						<a
+							href={a.url}
+							target="_blank"
+							rel="noopener noreferrer"
+							class:list={[
+								'project-card__action',
+								a.primary && 'is-primary',
+							]}
+						>
+							{a.label}
+						</a>
+					))}
+				</div>
+			)
+		}
+	</div>
+</article>
