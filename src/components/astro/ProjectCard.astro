@@ -135,3 +135,31 @@ const statusTone = status?.tone ?? 'active';
 		}
 	</div>
 </article>
+
+<script>
+	// Pipe pointer coordinates into CSS custom properties so the .project-card
+	// transform (defined in global.css) can react to cursor position. The CSS
+	// does all the actual visual work; this script is just a number pipe.
+	const cards = document.querySelectorAll<HTMLElement>('.project-card');
+	for (const card of cards) {
+		card.addEventListener('pointerenter', (event) => {
+			if (event.pointerType !== 'mouse') return;
+			card.classList.add('is-tilting');
+		});
+
+		card.addEventListener('pointermove', (event) => {
+			if (event.pointerType !== 'mouse') return;
+			const rect = card.getBoundingClientRect();
+			const x = (event.clientX - rect.left) / rect.width;
+			const y = (event.clientY - rect.top) / rect.height;
+			card.style.setProperty('--mx', x.toFixed(3));
+			card.style.setProperty('--my', y.toFixed(3));
+		});
+
+		card.addEventListener('pointerleave', () => {
+			card.classList.remove('is-tilting');
+			card.style.setProperty('--mx', '0.5');
+			card.style.setProperty('--my', '0.5');
+		});
+	}
+</script>

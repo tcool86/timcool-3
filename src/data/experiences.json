@@ -16,10 +16,10 @@
         }
       ],
       "achievements": [
-        "Reduced the time creating and uploading products to Hobbyfan by automating the process, an invaluable increase in efficiency.",
-        "Implemented various carts and payment systems.",
-        "Worked in a small team and was responsible for a variety of functions including processing orders and organizing shipments for conventions.",
-        "Created software to help automize business processes."
+        "Reduced the time required to create and upload products to Hobbyfan by automating the process, significantly improving efficiency.",
+        "Implemented various shopping cart and payment systems.",
+        "Worked on a small team with responsibilities ranging from order processing to organizing convention shipments.",
+        "Created software to help automate internal business processes."
       ]
     },
     "dateLabel": "2010-2013"
@@ -41,10 +41,10 @@
         }
       ],
       "achievements": [
-        "Wrote and designed framework and modular components for frontend SDK.",
-        "Created web APIs to help drive frontend Content Cloud experiences.",
-        "Rewrote and refactored legacy code to make it easier to maintain and extend.",
-        "Added frontend components to Content Cloud integrating with 3rd party software such as Adobe Experience Manager."
+        "Designed and developed framework and modular frontend SDK components.",
+        "Created web APIs to power frontend Content Cloud experiences.",
+        "Refactored and modernized legacy code to improve maintainability and extensibility.",
+        "Developed frontend Content Cloud integrations with third-party platforms such as Adobe Experience Manager."
       ]
     },
     "dateLabel": "2013-2015"
@@ -70,10 +70,10 @@
         }
       ],
       "achievements": [
-        "Fixed core issues, bugs, and crashes within the rewardStyle iOS influencer app.",
-        "Built new features and maintained legacy code inside the influencer app. The influencer app was used to post 1k+ original pieces of content daily by 12k+ publishers. Those posts engaged 2.3M+ LIKEtoKNOW.it users generating $210 million in sales to retail partners.",
-        "Developed part of the frontend web experience for rewardStyle's Display product.",
-        "Integration of new rewardStyle APIs for mobile app consumption."
+        "Resolved core issues, bugs, and crashes within the rewardStyle iOS influencer application.",
+        "Built new features and maintained legacy code for the influencer app, which supported 12k+ publishers posting over 1k original pieces of content daily. Those posts engaged 2.3M+ LIKEtoKNOW.it users and generated more than $210 million in retail partner sales.",
+        "Developed portions of the frontend web experience for rewardStyle's Display product.",
+        "Integrated new rewardStyle APIs for mobile application consumption."
       ]
     },
     "dateLabel": "2015-2017"
@@ -99,10 +99,10 @@
         }
       ],
       "achievements": [
-        "Lead the frontend architecture, development, and launch of Touchpoint's consumer-facing online ordering web application.",
-        "Integrated Door Dash ordering and Dasher Delivery into Touchpoint's point of sales system",
-        "Built a merchant onboarding web application for ZeroContact with integration into Close.io CRM",
-        "Developed features for Touchpoint's customer administrative tools including a QuickBooks payment integration."
+        "Led the frontend architecture, development, and launch of Touchpoint's consumer-facing online ordering platform.",
+        "Integrated DoorDash ordering and Dasher delivery services into Touchpoint's point-of-sale system.",
+        "Built a merchant onboarding web application for ZeroContact with integration into Close CRM.",
+        "Developed features for Touchpoint's customer administration tools, including a QuickBooks payment integration."
       ]
     },
     "dateLabel": "2018-2020"
@@ -124,9 +124,9 @@
         }
       ],
       "achievements": [
-        "Front-end lead for our internal plan design operations tool. The application was a large project impacting all clients and needed coordination across several teams.",
-        "Delivered improvements and bug fixes to tooling for our operations teams in time before implementation season.",
-        "Helped and mentored engineers in and outside of my team."
+        "Served as frontend lead for an internal plan design operations tool that impacted all clients and required coordination across multiple teams.",
+        "Delivered critical improvements and bug fixes to operational tooling ahead of implementation season deadlines.",
+        "Mentored and supported engineers both within and outside my immediate team."
       ]
     },
     "dateLabel": "2021-2022"
@@ -148,9 +148,9 @@
         }
       ],
       "achievements": [
-        "3-month contract with Google to help with finishing the development of an internal data center monitoring tool.",
-        "Brought the project to completion and helped with the transition to the internal team.",
-        "Primarily worked on test coverage. Acheived 95% test coverage for a 4-year project."
+        "Completed a 3-month contract with Google focused on finalizing development of an internal data center monitoring tool.",
+        "Helped bring the project to completion and supported the transition to the internal engineering team.",
+        "Primarily focused on test coverage, achieving 95% coverage for a 4-year legacy project."
       ]
     },
     "dateLabel": "2022-2022"
@@ -176,9 +176,9 @@
         }
       ],
       "achievements": [
-        "Helped bring User web facing features to parity with mobile app along with rebranding from TripActions to Navan.",
-        "Introduced centralized state management to the web app along with other technologies to improve developer productivity.",
-        "Lead the frontend development on Connect, a new product for Navan."
+        "Helped bring user-facing web features to parity with the mobile application during the rebrand from TripActions to Navan.",
+        "Introduced centralized state management and additional technologies to improve frontend developer productivity.",
+        "Led frontend development for Connect, a new product initiative at Navan."
       ]
     },
     "dateLabel": "2022-present"

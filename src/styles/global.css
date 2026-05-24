@@ -73,8 +73,8 @@ html::-webkit-scrollbar-thumb {
 }
 
 code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-		monospace;
+	font-family:
+		source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 /* ---------- App shell ---------- */
@@ -182,7 +182,6 @@ a:not(.app-link) {
 
 a.app-link {
 	padding: var(--space-8);
-	background-color: rgba(0, 0, 0, 0.4);
 	font-size: large;
 	font-family: Roboto, sans-serif;
 	text-transform: uppercase;
@@ -586,6 +585,14 @@ button.mobile-menu-btn {
 }
 
 .project-card {
+	/* Cursor position within the card, 0..1 on each axis. JS updates these
+	   on pointermove; they default to 0.5 (centered = no tilt). */
+	--mx: 0.5;
+	--my: 0.5;
+	/* Max tilt + drift magnitudes; tweak in one place. */
+	--tilt-deg: 10deg;
+	--drift-px: 6px;
+
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
@@ -598,15 +605,42 @@ button.mobile-menu-btn {
 	box-shadow:
 		0 0 var(--space-2) var(--primary-color),
 		var(--space-2) var(--space-2) var(--space-12) var(--shadow-color);
-	transition: transform cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s,
-		box-shadow cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s;
+	transform-origin: center center;
+	transform: perspective(900px)
+		rotateX(calc((var(--my) - 0.5) * var(--tilt-deg)))
+		rotateY(calc((0.5 - var(--mx)) * var(--tilt-deg)))
+		translate3d(
+			calc((var(--mx) - 0.5) * var(--drift-px)),
+			calc((var(--my) - 0.5) * var(--drift-px)),
+			0
+		);
+	/* Slow return when the cursor leaves. */
+	transition:
+		transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1),
+		box-shadow 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Snappy tracking while the cursor is over the card. */
+.project-card.is-tilting {
+	transition:
+		transform 80ms linear,
+		box-shadow 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .project-card:hover {
-	transform: translateY(calc(var(--space-4) * -1));
 	box-shadow:
 		0 0 var(--space-4) var(--secondary-color),
 		var(--space-4) var(--space-4) var(--space-16) var(--shadow-color);
+}
+
+@media (prefers-reduced-motion: reduce),
+	(hover: none),
+	(pointer: coarse) {
+	.project-card,
+	.project-card.is-tilting {
+		transform: none;
+		transition: box-shadow 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
+	}
 }
 
 .project-card__thumb {
@@ -677,7 +711,8 @@ button.mobile-menu-btn {
 	color: inherit;
 	text-decoration: none;
 	text-shadow: var(--space-2) var(--space-2) var(--secondary-color);
-	transition: color cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s,
+	transition:
+		color cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s,
 		text-shadow cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s;
 }
 
@@ -799,7 +834,8 @@ button.mobile-menu-btn {
 	border-radius: var(--space-4);
 	border: var(--space-1) solid var(--secondary-color);
 	text-shadow: 0 0 var(--space-1) var(--bg-color);
-	transition: background-color cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s,
+	transition:
+		background-color cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s,
 		box-shadow cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s,
 		transform cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s;
 }
